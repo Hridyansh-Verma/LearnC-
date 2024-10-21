@@ -1,11 +1,17 @@
-#include "Singleton.h"
-#include<iostream>
+#pragma once
+
 #include<mutex>
 
-// Only one instance
-// Global access
-// No ownership
-// Lazy initialisation
+class Singleton
+{
+    static Singleton* singletonInstance;
+    static std::mutex mtx;
+    Singleton();
+    Singleton(const Singleton& instance) = delete;
+    Singleton operator=(Singleton& instance) = delete;
+public:
+    static Singleton* getInstance();
+};
 
 Singleton* Singleton::singletonInstance=nullptr;
 std::mutex Singleton::mtx;
