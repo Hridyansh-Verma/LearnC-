@@ -3,6 +3,7 @@ T add (T x,T y)
 {
     return x+y;
 }
+
 template<typename T>
 T ArraySum(const T *pArr, size_t arrSize)
 {
